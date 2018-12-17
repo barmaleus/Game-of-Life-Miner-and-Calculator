@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/gameoflife.js"></script>
+    <script src="js/minesweeper.js"></script>
+    <script src="js/calc.js"></script>
+
+</head>
+<body  onload="openMenu()">
+
+<style type="text/css">
+    canvas { border: 1px solid black; }
+</style>
+
+<script>
+    function openMenu() {
+        let gameOfLifeButton = document.createElement("button");
+        gameOfLifeButton.innerHTML = "Game of life";
+        document.body.appendChild(gameOfLifeButton);
+
+        gameOfLifeButton.addEventListener ("click", function() {
+            gameOfLifeButton.style.display="none";
+            minesweeperButton.style.display="none";
+            calcButton.style.display="none";
+            startGameOfLife();
+        });
+
+        document.body.appendChild(document.createElement("br"));
+
+        let minesweeperButton = document.createElement("button");
+        minesweeperButton.innerHTML = "Minesweeper";
+        minesweeperButton.setAttribute("id", "minesweeperButton");
+        document.body.appendChild(minesweeperButton);
+
+        minesweeperButton.addEventListener ("click", function() {
+            gameOfLifeButton.style.display="none";
+            minesweeperButton.style.display="none";
+            calcButton.style.display="none";
+            startMinesweeper(10);
+        });
+
+        document.body.appendChild(document.createElement("br"));
+
+        let calcButton = document.createElement("button");
+        calcButton.innerHTML = "Calculator";
+        calcButton.setAttribute("id", "calcButton");
+        document.body.appendChild(calcButton);
+
+        calcButton.addEventListener ("click", function() {
+            gameOfLifeButton.style.display="none";
+            minesweeperButton.style.display="none";
+            calcButton.style.display="none";
+            startCalc();
+        });
+    }
+</script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
